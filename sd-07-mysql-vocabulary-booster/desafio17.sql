@@ -1,0 +1,11 @@
+USE w3schools;
+DELIMITER $$
+
+CREATE TRIGGER trigger_orderDate_insert
+BEFORE INSERT ON w3schools.orders
+FOR EACH ROW
+BEGIN
+SET NEW.OrderDATE = CURRENT_DATE();
+END $$
+
+DELIMITER ;
